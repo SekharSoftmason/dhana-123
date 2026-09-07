@@ -1,4 +1,4 @@
-package com.example.Rajesh.model;
+package com.example.Rajesh.StudentManagementSystem.controller.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

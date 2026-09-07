@@ -1,7 +1,7 @@
-package com.example.Rajesh.controller;
+package com.example.Rajesh.StudentManagementSystem.controller;
 
-import com.example.Rajesh.model.Student;
-import com.example.Rajesh.service.StudentService;
+import com.example.Rajesh.StudentManagementSystem.controller.model.Student;
+import com.example.Rajesh.StudentManagementSystem.controller.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -9,17 +9,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/students")
 public class StudentController {
     @Autowired
     private StudentService service;
 
-    @GetMapping
+    @GetMapping("/students")
     public List<Student> getAllStudent() {
         return service.getAllStudent();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/students/{id}")
     public Student getStudentById(@PathVariable int id) {
         return service.getStudentById(id);
     }
@@ -29,17 +28,17 @@ public class StudentController {
         service.addStudent(stud);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/students/{id}")
     public Student updateStudent(@PathVariable int id, @RequestBody Student stud) {
 
         return service.updateStudent(id,stud);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/students/{id}")
     public void deleteStudent(@PathVariable int id) {
         service.deleteStudent(id);
 
     }
-    @GetMapping("/pages")
+    @GetMapping("/students/pages")
     public Page<Student> pageAllStudent(@RequestParam int page, @RequestParam int size
             , @RequestParam String sortBy, @RequestParam String Direction) {
         return  service.pageAllStudent(page, size,sortBy,Direction);

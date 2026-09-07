@@ -1,7 +1,7 @@
-package com.example.Rajesh.service;
+package com.example.Rajesh.StudentManagementSystem.controller.service;
 
-import com.example.Rajesh.Repo.StudentRepo;
-import com.example.Rajesh.model.Student;
+import com.example.Rajesh.StudentManagementSystem.controller.Repo.StudentRepo;
+import com.example.Rajesh.StudentManagementSystem.controller.model.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
