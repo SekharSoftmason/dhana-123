@@ -1,9 +1,7 @@
 package com.example.Rajesh.StudentManagementSystem.configuration;
 
 import lombok.Data;
-
 @Data
-
 public class ResponseGlobal<T> {
       private String Message;
       private boolean Success;

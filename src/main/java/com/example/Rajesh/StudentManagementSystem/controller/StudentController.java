@@ -1,8 +1,10 @@
 package com.example.Rajesh.StudentManagementSystem.controller;
 
+import com.example.Rajesh.StudentManagementSystem.StudentDTO.StudentDto;
 import com.example.Rajesh.StudentManagementSystem.configuration.ResponseGlobal;
 import com.example.Rajesh.StudentManagementSystem.model.Student;
 import com.example.Rajesh.StudentManagementSystem.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.*;
@@ -27,7 +29,7 @@ public class StudentController {
     }
 
     @PostMapping("/addStudent")
-    public  ResponseGlobal<Student>  addStudent(@RequestBody Student stud) {
+    public  ResponseGlobal<StudentDto>  addStudent(@Valid @RequestBody StudentDto stud) {
        return service.addStudent(stud);
     }
     @PutMapping("/updateStudent/{id}")
@@ -37,7 +39,7 @@ public class StudentController {
         return service.updateStudent(id,stud);
     }
     @DeleteMapping("deleteStudent/{id}")
-    public ResponseGlobal<Student>  deleteStudent(@PathVariable int id) {
+    public String deleteStudent(@PathVariable int id) {
          return service.deleteStudent(id);
 
     }

@@ -5,13 +5,13 @@ import lombok.Data;
 
 @Data
 @Entity
-public class StudentAddress {
+public class Address {
        @Id
        @GeneratedValue(strategy = GenerationType.IDENTITY)
        private  int id;
        private String state;
        private String city;
-       private int pin_code;
+       private int pincode;
 
 
 }
